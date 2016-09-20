@@ -2,7 +2,7 @@
 
 All Disco Bus messages follow this format:
 
-<table border="1" style="text-align: center;">
+<table style="text-align: center;">
   <thead>
     <tr>
       <th colspan="7">Msg Header</th>

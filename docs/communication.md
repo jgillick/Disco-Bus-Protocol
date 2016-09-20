@@ -1,9 +1,9 @@
 # Disco Bus Communication Basics
 
 The master device manages all messages on the bus. Slave nodes respond to requests from
-master by filling in the data section of a message.
+master by filling in their data section of a message.
 
-All messages are directed either at a single node or all nodes (`broadcast`).
+All messages are directed either at a single node or all nodes (i.e. broadcast).
 
 # Types of Messages
 
@@ -21,7 +21,7 @@ on the network.
 For example, if our network contained 3 nodes, and master wanted to send RGB color values to each,
 the data section might look like this:
 
-<table border="1" style="text-align: center;">
+<table style="text-align: center;">
   <thead>
     <tr>
       <th>Msg Header</th>
