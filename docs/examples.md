@@ -42,6 +42,8 @@ This is a standard message which sends the bytes: `hi` to node 1.
 
 This asks node 5 which buttons have been pressed (fake command `0x21`) and expects a 4 bytes in response.
 
+The "Who" row shows which device is writing to the bus.
+
 <table>
   <thead>
     <tr>
@@ -131,6 +133,8 @@ except the address is set to broadcast: `0x00`.
 Sends RGB color values to 2 nodes. This is a broadcast message (address `0x00`) with flags
 set to batch mode message (`0x01`). Data lengths are set as: 2 nodes, with 3 bytes of data each
 
+The "For" row shows which device that part of the message is for.
+
 <table>
   <thead>
     <tr>
@@ -188,6 +192,8 @@ set to batch mode message (`0x01`). Data lengths are set as: 2 nodes, with 3 byt
 This message requests the button status from all 4 nodes on the bus. This is a broadcast message 
 (address `0x00`) with flags set to batch & response message (`0x03` = `0x01` | `0x02`). Data lengths 
 are set as: 4 nodes, with 1 byte of data each.
+
+The "Who" row shows which device is writing to the bus.
 
 <table>
   <thead>

@@ -1,15 +1,13 @@
 # Disco Bus Multidrop Communication Protocol
 
-A versatile master/slave communication protocol originally intended
-for modular multidrop networks, like RS485, and providing the ability
-for automatic addressing of all nodes.
+A versatile master/slave protocol well suited for multidrop networks, like RS485. 
 
 # Features
 
- * Can automatically assign addresses to all slave nodes, by order in the bus.
+ * Can automatically assign addresses to all slave nodes.
  * Supports up to 254 slave nodes.
+ * Resilient to dead nodes. (i.e. a dead slave node will not kill the rest of the bus)
  * Can send up to 255 bytes of data per node per message.
- * Resilient to dead slave nodes. (i.e. a dead slave node will not kill the rest of the bus)
 
 # Docs
 
