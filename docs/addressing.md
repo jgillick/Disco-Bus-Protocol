@@ -1,3 +1,5 @@
+[:arrow_up: Index](#README.md)
+
 # Automatic Addressing
 
 To enable automatic addressing, your bus needs to include an extra daisy chain
