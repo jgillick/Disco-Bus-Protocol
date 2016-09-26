@@ -18,5 +18,5 @@ A versatile master/slave protocol well suited for multidrop networks, like RS485
  * [Examples](docs/examples.md)
 
 # Implementations
- * [AVR](https://github.com/jgillick/AVR-Libs/tree/master/MultidropBusProtocol/)
+ * [AVR](https://github.com/jgillick/avr-discobus)
  * [nodejs](https://www.npmjs.com/package/discobus)
