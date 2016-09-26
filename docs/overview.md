@@ -63,6 +63,3 @@ Now I'm putting it out there for other people who might want to use it. I'd love
 or just hear about the projects you're using it for.
 
 Enjoy!
-
-[:arrow_up: Index](#README.md)
-[:arrow_right: Communication Basics](#communication.md)
