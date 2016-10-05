@@ -60,13 +60,13 @@ A byte who's combination of bits determine specific characteristics about the me
 | `0x80`    | User assignable                                               |
 
 
-For example, if you wanted to send a [batch response](../docs/communication.md#batch-response-message) 
+For example, if you wanted to send a [batch response](../docs/communication.md#batch-response-message)
 message, the flag byte would be `0x03` (via `0x01 | 0x02`).
 
 ### Address
 
 The destination address for the message. You can either send a message to a single node
-or broadcast to all nodes. 
+or broadcast to all nodes.
 
 To broadcast a message to all nodes, set the address field to `0`.
 
@@ -80,8 +80,9 @@ might use the command byte `0xA5` to ask a slave node for it's sensor value.
 
 #### Reserved Commands
 
-These commands are reserved for the system (and should be implemented by the Disco Bus 
-protocol library). Using these as custom commands will likely cause problems.
+Commands from `0xFA` to `0xFF` are reserved as commands that should have consistent
+meaning across all implementations. Using these for other reasons will likely cause
+unexpected problems.
 
 | Command   | Purpose                                   |
 |-----------|-------------------------------------------|
@@ -100,29 +101,29 @@ these bytes depends on the type of message:
 
 #### Standard message
 
-For standard messages, the first length byte (_num data sections_) will always be 1 
+For standard messages, the first length byte (_num data sections_) will always be 1
 and the second byte (_length per section_) will be the total length of the data section.
 
 #### Batch message
 
-A batch message will either contain, or receive, a data section for every node on the 
+A batch message will either contain, or receive, a data section for every node on the
 bus. So the first length byte (_num data sections_) should be the number of nodes on the
 bus and the second byte (_length per section_) will be the length of data per node.
 
 For example, if we have 5 nodes on the bus, and want to send 3 bytes to each (i.e. RBG color values)
-in a batch message, the length values would be: `0x05 0x03` and the full data section size should be 
+in a batch message, the length values would be: `0x05 0x03` and the full data section size should be
 15 bytes long.
 
 ## Data Section
 
-The data section is the body of the message and contains all the data you want to send to, or 
+The data section is the body of the message and contains all the data you want to send to, or
 receive from, the slave nodes.
 
 ## Message Footer
 
 The final two bytes of the message make up the 16-bit CRC checksum and mark the end of the message.
 
-The CRC should initially be set to `0xFFFF`, and all message bytes, after the starting two (`0xFF 0xFF`) 
-will be added to it based on the CRC-16-ANSI algorithm. 
+The CRC should initially be set to `0xFFFF`, and all message bytes, after the starting two (`0xFF 0xFF`)
+will be added to it based on the CRC-16-ANSI algorithm.
 
 A C implementation of the CRC-16-ANSI algorithm can be found [here](http://www.nongnu.org/avr-libc/user-manual/group__util__crc.html#ga95371c87f25b0a2497d9cba13190847f)
